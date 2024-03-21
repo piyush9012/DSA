@@ -4,13 +4,16 @@
 import java.util.*;
 
 public class sortDNS{
+    public static void swap(int arr[], int a, int b){
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
     public static void sortArray(int arr[], int n){
         int low = 0, mid = 0, high = n-1, temp;
         while(mid <= high){
             if(arr[mid] == 0){
-                temp = arr[low];
-                arr[low] = arr[mid];
-                arr[mid] = temp;
+                swap(arr, low, mid);
                 low++;
                 mid++;
             }
@@ -20,9 +23,7 @@ public class sortDNS{
             }
 
             else {
-                temp = arr[mid];
-                arr[mid] = arr[high];
-                arr[high] = temp;
+                swap(arr, mid, high);
                 high--;
             }
         }
