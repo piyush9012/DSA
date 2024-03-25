@@ -1,14 +1,16 @@
 import java.util.*;
 
-public class zero {
+public class Solution {
     public static int[][] zeroMatrix(int[][] matrix, int n, int m) {
+        // int[] row = new int[n]; --> matrix[..][0]
+        // int[] col = new int[m]; --> matrix[0][..]
         int col0 = 1;
 
         // Step 1: Traverse the matrix and mark 1st row & col accordingly
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
                 if (matrix[i][j] == 0) {
-                    matrix[i][0] = 0;      // Mark i-th row
+                    matrix[i][0] = 0; // Mark i-th row
                     if (j != 0)
                         matrix[0][j] = 0; // Mark j-th column
                     else
@@ -40,26 +42,20 @@ public class zero {
                 matrix[i][0] = 0;
             }
         }
-
         return matrix;
     }
 
     public static void main(String[] args) {
-        int[][] matrix = {
-                {1, 1, 1},
-                {1, 0, 1},
-                {1, 1, 1}
-        };
-
+        int[][] matrix = { { 1, 1, 1 }, { 1, 0, 1 }, { 1, 1, 1 } };
         int n = matrix.length;
         int m = matrix[0].length;
 
-        int[][] ans = zeroMatrix(matrix, n, m);
+        zeroMatrix(matrix, n, m);
 
         System.out.println("The Final matrix is: ");
-        for (int[] row : ans) {
-            for (int ele : row) {
-                System.out.print(ele + " ");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
         }
