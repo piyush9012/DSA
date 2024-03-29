@@ -26,7 +26,7 @@ public class fourSum {
                     long sum = nums[i];
                     sum += nums[j];
                     sum += nums[k];
-                    sum += nums[l];
+                    sum += nums[l]; // added separately to avoid overflow
                     if (sum == target) {
                         List<Integer> temp = new ArrayList<>();
                         temp.add(nums[i]);
