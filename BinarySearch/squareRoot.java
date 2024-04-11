@@ -3,18 +3,18 @@
 public class squareRoot {
     public static int floorSqrt(int n) {
         int low = 1, high = n;
-        int ans = 1;
 
-        while(low <= high){
-            int mid = (low+high)/2;
-            if((mid*mid) <= n){
-                ans = mid;
-                low = mid+1;
-            } else {
-                high = mid-1;
+        while (low <= high) {
+            long mid = (low + high) / 2;
+            long val = mid * mid;
+            if (val <= (long)(n)) {
+                low = (int)(mid + 1);    // eliminate the left half
+            }
+            else {
+                high = (int)(mid - 1);   // eliminate the right half
             }
         }
-        return ans;
+        return high;
     }
 
     public static void main(String[] args) {
