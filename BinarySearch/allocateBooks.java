@@ -28,10 +28,8 @@ public class Solution {
         if (m > n) return -1;
         int low = arr[0], high = 0;
 
-        for (int i = 0; i < n; i++) {
-            if (arr[i] > low) {
-                low = arr[i];
-            }
+        for (int i = 0; i < arr.length; i++) {
+            low = Math.max(low, arr[i]);
             high += arr[i];
         }
 
