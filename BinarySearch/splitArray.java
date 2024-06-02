@@ -2,7 +2,7 @@
 
 import java.util.*;
 
-public class Soltion {
+public class Solution {
     public static int countPartitions(int[] a, int maxSum) {
         int n = a.length;
         int partitions = 1;
